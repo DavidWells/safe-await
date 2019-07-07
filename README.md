@@ -2,6 +2,9 @@
 
 Safely use async/await without all the try catch blocks
 
+- `[error, data]` promise signatures
+- Throws on [native errors](https://bit.ly/2VsoCGE)
+
 ## Usage
 
 ```js
@@ -17,6 +20,8 @@ async function fooBar() {
   console.log(data)
 }
 ```
+
+See [usage](./usage.js) and [tests](./tests) for more examples.
 
 ## Prior art
 
