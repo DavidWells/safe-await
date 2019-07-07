@@ -1,0 +1,25 @@
+{
+  "name": "safe-await",
+  "version": "0.0.1",
+  "description": "Safely use async/await without all the try catch blocks",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "package.json",
+    "package-lock.json",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "ava -v",
+    "watch": "npm test -- --watch -v",
+    "publish": "git push origin && git push origin --tags",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish"
+  },
+  "author": "David Wells",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^2.1.0"
+  }
+}
