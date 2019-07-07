@@ -5,7 +5,7 @@ Safely use async/await without all the try catch blocks
 ## Usage
 
 ```js
-const safe = require('safe-await')
+const safeAwait = require('safe-await')
 
 async function fooBar() {
   const [error, data] = await safeAwait(promiseOne())
