@@ -1,6 +1,6 @@
 {
   "name": "safe-await",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Safely use async/await without all the try catch blocks",
   "main": "lib/index.js",
   "repository": {
