@@ -3,6 +3,10 @@
   "version": "0.0.2",
   "description": "Safely use async/await without all the try catch blocks",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidWells/safe-await"
+  },
   "files": [
     "lib",
     "package.json",
