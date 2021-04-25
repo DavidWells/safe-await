@@ -37,3 +37,7 @@ See [usage](./usage.js) and [tests](./tests) for more examples.
 - https://dev.to/sadarshannaiynar/capture-error-and-data-in-async-await-without-try-catch-1no2
 - https://medium.com/@pyrolistical/the-hard-error-handling-case-made-easy-with-async-await-597fd4b908b1
 - https://gist.github.com/woudsma/fe8598b1f41453208f0661f90ecdb98b
+
+## Alt approaches
+
+- https://github.com/onderonur/go-try
