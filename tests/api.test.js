@@ -1,5 +1,5 @@
-import test from 'ava'
-import safeAwait from '../lib'
+const test = require('ava')
+const safeAwait = require('../lib')
 
 test('Valid promise has data. [err, data]', async (t) => {
   const [err, data] = await safeAwait(promiseOne())
