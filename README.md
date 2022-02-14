@@ -42,3 +42,4 @@ See [usage](./usage.js) and [tests](./tests) for more examples.
 - https://github.com/gunar/go-for-it
 - https://github.com/majgis/catchify
 - https://github.com/scopsy/await-to-js
+- https://github.com/KyleRoss/await-handler
