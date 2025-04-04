@@ -15,8 +15,8 @@
     "README.md"
   ],
   "scripts": {
-    "test": "ava -v",
-    "watch": "npm test -- --watch -v",
+    "test": "node tests/api.test.js",
+    "watch": "uvu --watch tests",
     "publish": "git push origin && git push origin --tags",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
@@ -25,6 +25,6 @@
   "author": "David Wells",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^3.15.0"
+    "uvu": "^0.5.6"
   }
 }

@@ -23,6 +23,40 @@ async function fooBar() {
 
 See [usage](./usage.js) and [tests](./tests) for more examples.
 
+## Invert
+
+You can invert the error and data return values by passing `true` as the second argument.
+```js
+const safeAwait = require('safe-await')
+
+async function fooBar() {
+  const invert = true
+  const [data, error] = await safeAwait(promiseOne(), invert)
+
+  if (error) {
+    // handle error, retry, ignore, whatever
+  }
+
+  console.log(data)
+}
+```
+
+Alternatively, you can use the `safeInverse` function.
+
+```js
+const { safeInverse } = require('safe-await')
+
+async function fooBar() {
+  const [data, error] = await safeInverse(promiseOne())
+  
+  if (error) {
+    // handle error, retry, ignore, whatever
+  }
+
+  console.log(data)
+}
+```
+
 ## Research
 
 - [gist](https://gist.github.com/DavidWells/54f9dd1af4a489e5f1358f33ce59e8ad)
