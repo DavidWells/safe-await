@@ -1,6 +1,5 @@
 const { test } = require('uvu')
 const assert = require('uvu/assert')
-const safe = require('../lib')
 const { safeAwait, safeInverse } = require('../lib')
 
 test('Valid promise has data. [err, data]', async () => {
@@ -46,20 +45,20 @@ test('Error promise has instance of error. [data, err]', async () => {
 })
 
 test('Calls promises if not yet invoked', async () => {
-  const [errTwo, dataTwo] = await safe(promiseOne)
+  const [errTwo, dataTwo] = await safeAwait(promiseOne)
   assert.is(errTwo, undefined)
   assert.is(dataTwo, 'data here')
 })
 
 test('invert api', async () => {
-  const [data, err] = await safe(promiseOne, true)
+  const [data, err] = await safeAwait(promiseOne, true)
   assert.is(err, undefined)
   assert.is(data, 'data here')
   const [dataTwo, errTwo] = await safeInverse(promiseOne)
   assert.is(errTwo, undefined)
   assert.is(dataTwo, 'data here')
   /* normal api */
-  const [errThree, dataThree] = await safe(promiseOne)
+  const [errThree, dataThree] = await safeAwait(promiseOne)
   assert.is(errThree, undefined)
   assert.is(dataThree, 'data here')
 })
@@ -71,7 +70,7 @@ test('invert api', async () => {
 test('throws on code syntax error "ReferenceError"', async () => {
   try {
     const [err, data] = await safeAwait(promiseWithSyntaxError())
-    assert.fail('Should have thrown an error')
+    assert.unreachable('Should have thrown an error')
   } catch (e) {
     assert.ok(e instanceof ReferenceError)
     assert.is(e.message, 'madeUpThing is not defined')
@@ -81,7 +80,7 @@ test('throws on code syntax error "ReferenceError"', async () => {
 test('throws on code syntax error "ReferenceError" in try/catch', async () => {
   try {
     const [err, data] = await safeAwait(promiseWithSyntaxError())
-    assert.fail('Should have thrown an error')
+    assert.unreachable('Should have thrown an error')
   } catch (e) {
     assert.ok(e instanceof ReferenceError)
   }
@@ -90,7 +89,7 @@ test('throws on code syntax error "ReferenceError" in try/catch', async () => {
 test('throws on code "TypeError"', async () => {
   try {
     const [err, data] = await safeAwait(promiseWithTypeError())
-    assert.fail('Should have thrown an error')
+    assert.unreachable('Should have thrown an error')
   } catch (e) {
     assert.ok(e instanceof TypeError)
     assert.is(e.message, 'Cannot read properties of null (reading \'lolCool\')')
@@ -100,7 +99,7 @@ test('throws on code "TypeError"', async () => {
 test('throws on code "TypeError" in try/catch', async () => {
   try {
     const [err, data] = await safeAwait(promiseWithTypeError())
-    assert.fail('Should have thrown an error')
+    assert.unreachable('Should have thrown an error')
   } catch (e) {
     assert.ok(e instanceof TypeError)
   }

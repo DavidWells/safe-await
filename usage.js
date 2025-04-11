@@ -1,4 +1,4 @@
-const O_o = require('./lib')
+const { safeAwait : O_o } = require('./lib')
 
 /* Look ma, no try/catch */
 async function usageExample(input) {
@@ -53,7 +53,7 @@ function promiseTwo(value) {
 }
 
 /* Normal promise */
-function promiseThree() {
+function promiseThree(arg) {
   if (simulateFailure(true)) {
     console.log('myPromiseThree error triggered')
     return Promise.resolve(
