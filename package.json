@@ -1,6 +1,6 @@
 {
   "name": "safe-await",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Safely use async/await without all the try catch blocks",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
