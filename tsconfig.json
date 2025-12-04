@@ -2,7 +2,9 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "noEmit": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./types",
     "strict": false,
     "noImplicitAny": false,
     "strictNullChecks": false,
@@ -12,6 +14,6 @@
     "target": "ES2020",
     "module": "CommonJS"
   },
-  "include": ["**/*.js", "**/*.ts"],
+  "include": ["lib/**/*.js"],
   "exclude": ["node_modules"]
 } 

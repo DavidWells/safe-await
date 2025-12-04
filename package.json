@@ -3,18 +3,21 @@
   "version": "3.0.1",
   "description": "Safely use async/await without all the try catch blocks",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "types": "types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/DavidWells/safe-await"
   },
   "files": [
     "lib",
+    "types",
     "package.json",
     "package-lock.json",
     "README.md"
   ],
   "scripts": {
+    "build:types": "tsc",
+    "prepublishOnly": "npm run build:types",
     "test": "node tests/api.test.js",
     "watch": "uvu --watch tests",
     "publish": "git push origin && git push origin --tags",
@@ -25,6 +28,7 @@
   "author": "David Wells",
   "license": "MIT",
   "devDependencies": {
+    "typescript": "^5.9.3",
     "uvu": "^0.5.6"
   }
 }
